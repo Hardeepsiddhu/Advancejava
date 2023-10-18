@@ -1,4 +1,4 @@
-package in.co.rays.util;
+package in.com.rays.util;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -8,7 +8,10 @@ import java.util.ResourceBundle;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-public final class JdbcDataSource {
+
+
+public class JdbcDataSource {
+
 	ResourceBundle  rb = ResourceBundle.getBundle("in.co.rays.bundle.system");
 
 	private static JdbcDataSource jds = null;
@@ -61,3 +64,5 @@ public final class JdbcDataSource {
 		closeConnection(conn, null, null);
 	}
 }
+
+

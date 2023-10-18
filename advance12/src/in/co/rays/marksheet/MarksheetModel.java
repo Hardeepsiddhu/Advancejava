@@ -7,26 +7,27 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.co.rays.util.JdbcDataSource;
+
 public class MarksheetModel {
 
 	public Integer nextPk() throws Exception {
 
 		int pk = 0;
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sunrays", "root", "root");
+		Connection con = JdbcDataSource.getConnection();
 		PreparedStatement ps = con.prepareStatement("select max(id) from marksheet");
 
 		ResultSet rs = ps.executeQuery();
 		while (rs.next()) {
 			pk = rs.getInt(1);
 		}
+		con.close();
 		return pk + 1;
 	}
 
 	public void add(MarksheetBean bean) throws Exception {
 
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sunrays", "root", "root");
+		Connection conn = JdbcDataSource.getConnection();
 
 		PreparedStatement ps = conn.prepareStatement("insert into marksheet values(?, ?, ?, ?, ?, ?)");
 		ps.setInt(1, nextPk());
@@ -37,6 +38,7 @@ public class MarksheetModel {
 		ps.setInt(6, bean.getMaths());
 
 		int i = ps.executeUpdate();
+		conn.close();
 
 		System.out.println("Data Inserted " + i);
 
@@ -44,11 +46,10 @@ public class MarksheetModel {
 
 	public void update(MarksheetBean bean) throws Exception {
 
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sunrays", "root", "root");
+		Connection con = JdbcDataSource.getConnection();
 
 		PreparedStatement ps = con
-				.prepareStatement("update marksheet set name= ?,roll_no=?,physics=?,chemistry=?,maths=?");
+				.prepareStatement("update marksheet set name= ?,roll_no=?,physics=?,chemistry=?,maths=? where id=?");
 
 		ps.setString(1, bean.getName());
 		ps.setInt(2, bean.getRollNo());
@@ -58,27 +59,25 @@ public class MarksheetModel {
 		ps.setInt(6, bean.getId());
 
 		int i = ps.executeUpdate();
+		con.close();
 		System.out.println("data inserted" + i);
 	}
 
 	public void delete(int id) throws Exception {
 
-		Class.forName("com.mysql.cj.jdbc.Driver");
-
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sunrays", "root", "root");
+		Connection con = JdbcDataSource.getConnection();
 
 		PreparedStatement ps = con.prepareStatement("delete from marksheet where id =?");
 
 		ps.setInt(1, id);
 
 		int i = ps.executeUpdate();
+		con.close();
 		System.out.println("data inserted" + i);
 	}
 
 	public MarksheetBean findById(int id) throws Exception {
-		Class.forName("com.mysql.cj.jdbc.Driver");
-
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sunrays", "root", "root");
+		Connection con = JdbcDataSource.getConnection();
 
 		PreparedStatement ps = con.prepareStatement("select * from marksheet where id =?");
 		ps.setInt(1, id);
@@ -96,14 +95,13 @@ public class MarksheetModel {
 			bean.setChemistry(rs.getInt(5));
 			bean.setMaths(rs.getInt(6));
 		}
+		con.close();
 		return bean;
 
 	}
 
 //	public List search() throws Exception{
-//		Class.forName("com.mysql.cj.jdbc.Driver");
-//		
-//		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sunrays", "root", "root");
+//		Connection con = JdbcDataSource.getConnection();
 //		
 //		PreparedStatement ps = con.prepareStatement("select * from marksheet");
 //		ResultSet rs = ps.executeQuery();
@@ -120,13 +118,13 @@ public class MarksheetModel {
 //				
 //				list.add(bean);
 //		 }
+	
 //		 return list;
 
 	// }
 
 	public List search(MarksheetBean bean, int pageNo, int pageSize) throws Exception {
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sunrays", "root", "root");
+		Connection con = JdbcDataSource.getConnection();
 
 		StringBuffer sql = new StringBuffer("select * from marksheet where 1=1");
 
@@ -160,10 +158,11 @@ public class MarksheetModel {
 			bean.setRollNo(rs.getInt(3));
 			bean.setPhysics(rs.getInt(4));
 			bean.setChemistry(rs.getInt(5));
-			bean.setMaths(rs.getInt(5));
+			bean.setMaths(rs.getInt(6));
 
 			list.add(bean);
 		}
+		con.close();
 		return list;
 	}
 }

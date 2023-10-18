@@ -8,7 +8,7 @@ import in.co.rays.util.JdbcDataSource;
 
 public class TestJDBC {
 	public static void main(String[] args) throws Exception{
-		for (int i = 1; i <=52 ; i++) {
+		for (int i = 1; i <= 15 ; i++) {
 			
 			testGet();
 			System.out.println("connection =" + i);
