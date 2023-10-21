@@ -1,0 +1,26 @@
+package in.co.rays.marksheet;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class MarksheetModel {
+	
+	public void add() throws Exception{
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://local:3306/sunrays", "root", "root");
+		
+		PreparedStatement ps = con.prepareStatement("insert into marksheet values(?,?,?,?,?,?)");
+		ps.setInt(1, 9);
+		ps.setString(2, "Dinesh");
+		ps.setInt(3, 109);
+		ps.setInt(4, 52);
+		ps.setInt(5, 95);
+		ps.setInt(6, 65);
+		int i = ps.executeUpdate();
+		
+		
+		System.out.println("data inserted" +i);
+	}
+
+}

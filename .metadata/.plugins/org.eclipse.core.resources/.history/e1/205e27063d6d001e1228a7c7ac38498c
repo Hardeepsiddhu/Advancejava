@@ -1,0 +1,29 @@
+package in.co.rays.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import in.co.rays.bean.UserBean;
+import in.com.rays.util.JdbcDataSource;
+
+public class UserModel {
+
+	public Integer nextPk() throws Exception{
+		int pk =0;
+		Connection con = JdbcDataSource.getConnection();
+		PreparedStatement ps = con.prepareStatement("select max(id) from user");
+		ResultSet rs = ps.executeQuery();
+		while(rs.next()) {
+			ps.setInt(1, id);	
+		}
+		return pk+1;
+	}
+	public void add(UserBean bean)throws Exception{
+		Connection con = JdbcDataSource.getConnection();
+		PreparedStatement ps = con.prepareStatement("insert into user values(?,?,?,?,?,?,?)");
+		
+		ps.setInt(1, nextPk());
+		
+	}
+}

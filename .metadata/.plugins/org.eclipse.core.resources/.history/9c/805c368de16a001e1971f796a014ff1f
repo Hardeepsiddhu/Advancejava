@@ -1,0 +1,16 @@
+package in.co.rasy.callable;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+
+import in.co.rays.util.JdbcDataSource;
+
+public class TestProcedureInOut {
+
+	public static void main(String[] args) throws Exception {
+
+
+		Connection con = JdbcDataSource.getConnection();
+		CallableStatement callstmt = con.prepareCall("{CALL emp1INOUT(?)}");
+	}
+}

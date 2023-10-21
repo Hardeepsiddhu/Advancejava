@@ -42,8 +42,9 @@ public class UserModel {
 		ps.setString(7, bean.getAddress());
 
 		int i = ps.executeUpdate();
-		conn.close();
+		
 		System.out.println("data inserted" + i);
+		conn.close();
 	}
 	
 	public void update(UserBean bean) throws Exception {

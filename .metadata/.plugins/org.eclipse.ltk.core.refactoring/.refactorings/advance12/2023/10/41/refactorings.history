@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;in.com.rays.user&apos; to &apos;in.co.rays.user&apos;&#x0D;&#x0A;- Original project: &apos;advance12&apos;&#x0D;&#x0A;- Original element: &apos;advance12/src/in.com.rays.user&apos;&#x0D;&#x0A;- Renamed element: &apos;advance12/src/in.co.rays.user&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;in.com.rays.user&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;in.com.rays.user" name="in.co.rays.user" qualified="false" references="true" stamp="1697231542802" textual="false" version="1.0"/>
+</session>

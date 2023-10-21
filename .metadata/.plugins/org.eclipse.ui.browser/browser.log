@@ -1,0 +1,27 @@
+
+Oct 16, 2023 15:14:56.81 NEW SESSION
+Oct 16, 2023 15:14:56.81 [3260:10676:1016/151456.808:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+Oct 16, 2023 15:14:57.93 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 16, 2023 15:15:17.99 [3260:10676:1016/151517.990:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+Oct 16, 2023 15:16:11.37 [3260:10676:1016/151611.378:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+Oct 16, 2023 15:18:01.12 [3260:10676:1016/151801.122:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+Oct 16, 2023 15:20:52.75 [3260:10676:1016/152052.749:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+Oct 16, 2023 15:26:57.15 [3260:10676:1016/152657.156:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+Oct 16, 2023 15:33:31.09 [3260:12544:1016/153331.089:ERROR:device_event_log_impl.cc(225)] [15:33:31.089] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Oct 16, 2023 15:33:32.18 [3260:10676:1016/153332.189:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+Oct 17, 2023 11:56:33.44 [14104:12348:1017/115633.441:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+Oct 17, 2023 11:56:34.84 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+Oct 19, 2023 14:24:08.11 NEW SESSION
+Oct 19, 2023 14:24:08.11 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+Oct 19, 2023 15:50:52.89 NEW SESSION
+Oct 19, 2023 15:50:52.89 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 19, 2023 15:59:16.42 [5268:2700:1019/155916.426:ERROR:device_event_log_impl.cc(225)] [15:59:16.426] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Oct 19, 2023 16:19:32.05 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 19, 2023 19:33:40.52 [10580:8188:1019/193340.528:ERROR:device_event_log_impl.cc(225)] [19:33:40.436] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Oct 20, 2023 13:19:02.09 [10580:8188:1020/131902.097:ERROR:device_event_log_impl.cc(225)] [13:19:02.096] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Oct 20, 2023 14:44:12.91 [10580:8188:1020/144412.150:ERROR:device_event_log_impl.cc(225)] [14:44:12.150] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Oct 20, 2023 15:05:46.29 [10580:8188:1020/150546.293:ERROR:device_event_log_impl.cc(225)] [15:05:46.293] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Element not found. (0x490)
+Oct 20, 2023 15:15:55.01 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Oct 20, 2023 15:46:57.23 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
